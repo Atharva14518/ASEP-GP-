@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Language Tracker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #1a1a2e, #162447);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            color: #8e44ad; /* Purple */
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad;
+            }
+            to {
+                text-shadow: 0 0 20px #8e44ad, 0 0 40px #8e44ad;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+        }
+
+        .box {
+            background-color: #0f3460;
+            border: 2px solid #8e44ad; /* Purple border */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(142, 68, 173, 0.5);
+        }
+
+        .box p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .box button {
+            background-color: #8e44ad; /* Purple button */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .box button:hover {
+            transform: scale(1.1);
+        }
+
+        .box .completed {
+            background-color: #27ae60; /* Green */
+        }
+
+        .box .incomplete {
+            background-color: #e74c3c; /* Red */
+        }
+
+    </style>
+    <script>
+        function markComplete(button) {
+            button.classList.add('completed');
+            button.classList.remove('incomplete');
+        }
+
+        function markIncomplete(button) {
+            button.classList.add('incomplete');
+            button.classList.remove('completed');
+        }
+    </script>
+</head>
+<body>
+    <h1>C Language Tracker</h1>
+    <div class="container">
+        <div class="box">
+            <p>Variables and Data Types</p>
+            <button onclick="markComplete(this)">Completed</button>
+            <button onclick="markIncomplete(this)">Incomplete</button>
+        </div>
+        <div class="box">
+            <p>Control Flow (if, else, loops)</p>
+            <button onclick="markComplete(this)">Completed</button>
+            <button onclick="markIncomplete(this)">Incomplete</button>
+        </div>
+        <div class="box">
+            <p>Functions</p>
+            <button onclick="markComplete(this)">Completed</button>
+            <button onclick="markIncomplete(this)">Incomplete</button>
+        </div>
+        <div class="box">
+            <p>Arrays</p>
+            <button onclick="markComplete(this)">Completed</button>
+            <button onclick="markIncomplete(this)">Incomplete</button>
+        </div>
+        <div class="box">
+            <p>Pointers</p>
+            <button onclick="markComplete(this)">Completed</button>
+            <button onclick="markIncomplete(this)">Incomplete</button>
+        </div>
+        <div class="box">
+            <p>Structures</p>
+            <button onclick="markComplete(this)">Completed</button>
+            <button onclick="markIncomplete(this)">Incomplete</button>
+        </div>
+    </div>
+</body>
+</html>
